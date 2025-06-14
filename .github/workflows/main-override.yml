@@ -5,12 +5,17 @@
 name: CI
 
 on:
-  workflow_dispatch:
-    inputs:
-      image_tag:
-        description: 'Docker image tag'
-        required: true
-        default: 'latest'
+  push:
+    tags:
+      - "v*"
+    branches:
+      - avbit
+#  workflow_dispatch:
+#    inputs:
+#      image_tag:
+#        description: 'Docker image tag'
+#        required: true
+#        default: 'latest'
 
 jobs:
   build:
@@ -35,7 +40,7 @@ jobs:
           docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
           docker buildx create --name xbuilder --use
           docker buildx inspect --bootstrap
-          .github/bin/docker-release.sh
+          .github/bin/docker-release-override.sh
 
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
