@@ -6,11 +6,11 @@ name: CI
 
 on:
   workflow_dispatch:
-    tags:
-      - "v*"
-    branches:
-      - master
-      - next
+    inputs:
+      image_tag:
+        description: 'Docker image tag'
+        required: true
+        default: 'latest'
 
 jobs:
   build:
