@@ -10,12 +10,6 @@ on:
       - "v*"
     branches:
       - avbit
-#  workflow_dispatch:
-#    inputs:
-#      image_tag:
-#        description: 'Docker image tag'
-#        required: true
-#        default: 'latest'
 
 jobs:
   build:
