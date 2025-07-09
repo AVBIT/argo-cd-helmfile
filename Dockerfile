@@ -83,9 +83,9 @@ ARG AGE_VERSION="v1.2.0"
 #ARG JQ_VERSION="1.6"
 ARG HELM2_VERSION="v2.17.0"
 # https://github.com/helm/helm/releases
-ARG HELM3_VERSION="v3.17.3"
+ARG HELM3_VERSION="v3.18.4"
 # https://github.com/helmfile/helmfile/releases
-ARG HELMFILE_VERSION="0.171.0"
+ARG HELMFILE_VERSION="1.1.2"
 # https://github.com/kubernetes-sigs/kustomize/releases
 ARG KUSTOMIZE5_VERSION="5.6.0"
 # https://github.com/getsops/sops/releases
